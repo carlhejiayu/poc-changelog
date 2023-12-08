@@ -11,6 +11,10 @@ on:
           required: true
           type: string
 
+permissions:
+  contents: write
+  discussions: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -18,6 +22,8 @@ jobs:
       - name: Build Changelog
         id: github_release
         uses: mikepenz/release-changelog-builder-action@v3
+        fromTag: ${{ inputs.fromTag }}
+        toTag: ${{ inputs.toTag }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

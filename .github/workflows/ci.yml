@@ -1,7 +1,15 @@
 name: 'CI'
 on:
   workflow_dispatch:
-
+    inputs:
+      fromTag:
+        description: 'A tag made a release from'
+        required: true
+        type: string
+      toTag:
+        description: 'A tag made a release To'
+        required: true
+        type: string
 
 jobs:
   release:

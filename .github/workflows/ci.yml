@@ -29,7 +29,6 @@ jobs:
         with:
           fromTag: ${{ inputs.fromTag }}
           toTag: ${{ inputs.toTag }}
-          configuration: "configurations.json"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

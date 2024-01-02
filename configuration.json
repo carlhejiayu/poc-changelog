@@ -20,15 +20,10 @@
       "order": "ASC",
       "on_property": "mergedAt"
     },
-    "template": "#{{CHANGELOG}}\n\n<details>\n<summary>Uncategorized</summary>\n\n#{{UNCATEGORIZED}}\n</details>",
+    "template": "#{{CHANGELOG}}",
     "pr_template": "- #{{TITLE}}\n   - PR: ##{{NUMBER}}",
     "empty_template": "- no changes",
     "label_extractor": [],
-    "duplicate_filter": {
-      "pattern": "\\[ABC-....\\]",
-      "on_property": "title",
-      "method": "match"
-    },
     "transformers": [],
     "trim_values": false,
     "max_tags_to_fetch": 200,
@@ -36,11 +31,7 @@
     "max_back_track_time_days": 365,
     "exclude_merge_branches": [],
     "tag_resolver": {
-      "method": "semver",
-      "filter": {
-        "pattern": "api-(.+)",
-        "flags": "gu"
-      }
+      "method": "semver"
     },
     "base_branches": [
       "main"
